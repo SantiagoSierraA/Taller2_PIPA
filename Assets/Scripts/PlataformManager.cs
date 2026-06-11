@@ -36,7 +36,7 @@ public class PlataformManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
 
-        Debug.Log("Reciclando plataforma: " + plataforma.name);
+        
 
         float nuevaZ = ultimaPlataformaZ + distanciaEntrePlataformas;
         plataforma.transform.position = new Vector3(plataforma.transform.position.x,

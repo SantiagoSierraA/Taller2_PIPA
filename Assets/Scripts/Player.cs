@@ -17,6 +17,12 @@ public class Player : MonoBehaviour
     private float movX;  
     private Rigidbody rb;
 
+    public Transform puntoDisparo;
+    public GameObject prefabBala;
+
+    private float tiempoUltimoDisparo = 0f; 
+    public float cooldownDisparo = 0.5f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -27,6 +33,7 @@ public class Player : MonoBehaviour
         // A = -1, D = 1
         movX = Input.GetAxis("Horizontal");
         saltar();
+        Disparo();
     }
 
     void FixedUpdate()
@@ -60,13 +67,22 @@ public class Player : MonoBehaviour
     // Detecta el contacto con el suelo
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Floor"))
+        if (collision.gameObject.CompareTag("Translator"))
             enSuelo = true;
     }
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Floor"))
+        if (collision.gameObject.CompareTag("Translator"))
             enSuelo = false;
+    }
+
+    void Disparo()
+    {
+        if (Input.GetKeyDown(KeyCode.F) && Time.time >= tiempoUltimoDisparo + cooldownDisparo)
+        {
+            Instantiate(prefabBala, puntoDisparo.position, puntoDisparo.rotation);
+            tiempoUltimoDisparo = Time.time;
+        }
     }
 }
