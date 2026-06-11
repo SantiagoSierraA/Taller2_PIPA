@@ -502,6 +502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 227340198}
   - component: {fileID: 227340199}
+  - component: {fileID: 227340200}
   m_Layer: 0
   m_Name: GameManger
   m_TagString: Untagged
@@ -534,6 +535,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43dec53117c23bc45a2534106d25b28f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &227340200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227340197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab6ecd0141c03b744a3e9bd5e630d76c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &259117194 stripped
@@ -772,6 +785,7 @@ GameObject:
   - component: {fileID: 348428820}
   - component: {fileID: 348428824}
   - component: {fileID: 348428823}
+  - component: {fileID: 348428825}
   m_Layer: 0
   m_Name: Translator2
   m_TagString: Translator
@@ -902,6 +916,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &348428825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348428818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed19565227a6854f919ab5fb851077f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombies:
+  - {fileID: 6466056858245238364, guid: e19c5cd911291714597988b05eb1aad2, type: 3}
+  vehiculos:
+  - {fileID: 95459775442738897, guid: aa7fd84f076a2bf40979750f3d945680, type: 3}
+  - {fileID: 3912586820146283082, guid: 7b375b428fdb9c5468ed27b8a43da14a, type: 3}
+  - {fileID: 8524567528031041249, guid: d6084ba5ba515f04e906cc3900ffedd2, type: 3}
+  carriles:
+  - -3
+  - 0
+  - 3
+  alturaSpawn: 0.5
+  distanciaSegura: 40
+  probabilidadVacio: 0.4
+  probabilidadZombie: 0.6
 --- !u!1001 &359485089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -985,6 +1025,7 @@ GameObject:
   - component: {fileID: 365749458}
   - component: {fileID: 365749462}
   - component: {fileID: 365749461}
+  - component: {fileID: 365749463}
   m_Layer: 0
   m_Name: Translator7
   m_TagString: Translator
@@ -1117,6 +1158,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &365749463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365749456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed19565227a6854f919ab5fb851077f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombies:
+  - {fileID: 6466056858245238364, guid: e19c5cd911291714597988b05eb1aad2, type: 3}
+  vehiculos:
+  - {fileID: 95459775442738897, guid: aa7fd84f076a2bf40979750f3d945680, type: 3}
+  - {fileID: 3912586820146283082, guid: 7b375b428fdb9c5468ed27b8a43da14a, type: 3}
+  - {fileID: 8524567528031041249, guid: d6084ba5ba515f04e906cc3900ffedd2, type: 3}
+  carriles:
+  - -3
+  - 0
+  - 3
+  alturaSpawn: 0.5
+  distanciaSegura: 40
+  probabilidadVacio: 0.4
+  probabilidadZombie: 0.6
 --- !u!1001 &373074341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1516,9 +1583,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidadAdelante: 8
-  velocidadLateral: 6
-  limiteIzquierda: -4
-  limiteDerecha: 4
+  velocidadCambioCarril: 10
+  carriles:
+  - -3
+  - 0
+  - 3
   fuerzaSalto: 8
   puntoDisparo: {fileID: 2083597569}
   prefabBala: {fileID: 7997152550611427232, guid: 2f737e0d51796b14cad95049df8900b7, type: 3}
@@ -1789,6 +1858,7 @@ GameObject:
   - component: {fileID: 857614697}
   - component: {fileID: 857614701}
   - component: {fileID: 857614700}
+  - component: {fileID: 857614702}
   m_Layer: 0
   m_Name: Translator6
   m_TagString: Translator
@@ -1919,6 +1989,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &857614702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857614695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed19565227a6854f919ab5fb851077f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombies:
+  - {fileID: 6466056858245238364, guid: e19c5cd911291714597988b05eb1aad2, type: 3}
+  vehiculos:
+  - {fileID: 95459775442738897, guid: aa7fd84f076a2bf40979750f3d945680, type: 3}
+  - {fileID: 3912586820146283082, guid: 7b375b428fdb9c5468ed27b8a43da14a, type: 3}
+  - {fileID: 8524567528031041249, guid: d6084ba5ba515f04e906cc3900ffedd2, type: 3}
+  carriles:
+  - -3
+  - 0
+  - 3
+  alturaSpawn: 0.5
+  distanciaSegura: 40
+  probabilidadVacio: 0.4
+  probabilidadZombie: 0.6
 --- !u!4 &923962893 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 50990c3f35396bf4e86d67505fcb8717, type: 3}
@@ -1938,6 +2034,7 @@ GameObject:
   - component: {fileID: 925560555}
   - component: {fileID: 925560559}
   - component: {fileID: 925560558}
+  - component: {fileID: 925560560}
   m_Layer: 0
   m_Name: Translator10
   m_TagString: Translator
@@ -2069,6 +2166,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &925560560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925560553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed19565227a6854f919ab5fb851077f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombies:
+  - {fileID: 6466056858245238364, guid: e19c5cd911291714597988b05eb1aad2, type: 3}
+  vehiculos:
+  - {fileID: 95459775442738897, guid: aa7fd84f076a2bf40979750f3d945680, type: 3}
+  - {fileID: 3912586820146283082, guid: 7b375b428fdb9c5468ed27b8a43da14a, type: 3}
+  - {fileID: 8524567528031041249, guid: d6084ba5ba515f04e906cc3900ffedd2, type: 3}
+  carriles:
+  - -3
+  - 0
+  - 3
+  alturaSpawn: 0.5
+  distanciaSegura: 40
+  probabilidadVacio: 0.4
+  probabilidadZombie: 0.6
 --- !u!4 &952408235 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 24563f4336647144ca44906146f7bef9, type: 3}
@@ -2187,11 +2310,6 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 50990c3f35396bf4e86d67505fcb8717, type: 3}
   m_PrefabInstance: {fileID: 299852723}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &977835697 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5d87b01946ee9bb4490459b989700768, type: 3}
-  m_PrefabInstance: {fileID: 1821473236}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &995601263 stripped
 Transform:
@@ -2765,7 +2883,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2106200610}
+  - {fileID: 8763497709948254572}
   - {fileID: 925560554}
   - {fileID: 1563546414}
   - {fileID: 1742358653}
@@ -2846,11 +2964,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97df277ace778f940aaf18083c4b27f2, type: 3}
---- !u!4 &1405192090 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d328e0bbfd7c78f47b6dbc2daa2387de, type: 3}
-  m_PrefabInstance: {fileID: 1656266647}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1436349030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3008,6 +3121,7 @@ GameObject:
   - component: {fileID: 1563546415}
   - component: {fileID: 1563546419}
   - component: {fileID: 1563546418}
+  - component: {fileID: 1563546420}
   m_Layer: 0
   m_Name: Translator9
   m_TagString: Translator
@@ -3142,6 +3256,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &1563546420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563546413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed19565227a6854f919ab5fb851077f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombies:
+  - {fileID: 6466056858245238364, guid: e19c5cd911291714597988b05eb1aad2, type: 3}
+  vehiculos:
+  - {fileID: 95459775442738897, guid: aa7fd84f076a2bf40979750f3d945680, type: 3}
+  - {fileID: 3912586820146283082, guid: 7b375b428fdb9c5468ed27b8a43da14a, type: 3}
+  - {fileID: 8524567528031041249, guid: d6084ba5ba515f04e906cc3900ffedd2, type: 3}
+  carriles:
+  - -3
+  - 0
+  - 3
+  alturaSpawn: 0.5
+  distanciaSegura: 40
+  probabilidadVacio: 0.4
+  probabilidadZombie: 0.6
 --- !u!1 &1611981802
 GameObject:
   m_ObjectHideFlags: 0
@@ -3156,6 +3296,7 @@ GameObject:
   - component: {fileID: 1611981804}
   - component: {fileID: 1611981808}
   - component: {fileID: 1611981807}
+  - component: {fileID: 1611981809}
   m_Layer: 0
   m_Name: Translator5
   m_TagString: Translator
@@ -3286,6 +3427,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &1611981809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611981802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed19565227a6854f919ab5fb851077f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombies:
+  - {fileID: 6466056858245238364, guid: e19c5cd911291714597988b05eb1aad2, type: 3}
+  vehiculos:
+  - {fileID: 95459775442738897, guid: aa7fd84f076a2bf40979750f3d945680, type: 3}
+  - {fileID: 3912586820146283082, guid: 7b375b428fdb9c5468ed27b8a43da14a, type: 3}
+  - {fileID: 8524567528031041249, guid: d6084ba5ba515f04e906cc3900ffedd2, type: 3}
+  carriles:
+  - -3
+  - 0
+  - 3
+  alturaSpawn: 0.5
+  distanciaSegura: 40
+  probabilidadVacio: 0.4
+  probabilidadZombie: 0.6
 --- !u!1001 &1642181962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3355,18 +3522,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50990c3f35396bf4e86d67505fcb8717, type: 3}
---- !u!4 &1653758733 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9ede5d6b7ae989c4baf716edb9123372, type: 3}
-  m_PrefabInstance: {fileID: 1957754729}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1656266647
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2106200610}
+    m_TransformParent: {fileID: 8763497709948254572}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d328e0bbfd7c78f47b6dbc2daa2387de, type: 3}
       propertyPath: m_LocalScale.x
@@ -3512,6 +3674,7 @@ GameObject:
   - component: {fileID: 1742358654}
   - component: {fileID: 1742358658}
   - component: {fileID: 1742358657}
+  - component: {fileID: 1742358659}
   m_Layer: 0
   m_Name: Translator8
   m_TagString: Translator
@@ -3646,6 +3809,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &1742358659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742358652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed19565227a6854f919ab5fb851077f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombies:
+  - {fileID: 6466056858245238364, guid: e19c5cd911291714597988b05eb1aad2, type: 3}
+  vehiculos:
+  - {fileID: 95459775442738897, guid: aa7fd84f076a2bf40979750f3d945680, type: 3}
+  - {fileID: 3912586820146283082, guid: 7b375b428fdb9c5468ed27b8a43da14a, type: 3}
+  - {fileID: 8524567528031041249, guid: d6084ba5ba515f04e906cc3900ffedd2, type: 3}
+  carriles:
+  - -3
+  - 0
+  - 3
+  alturaSpawn: 0.5
+  distanciaSegura: 40
+  probabilidadVacio: 0.4
+  probabilidadZombie: 0.6
 --- !u!1001 &1795533820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3859,7 +4048,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2106200610}
+    m_TransformParent: {fileID: 8763497709948254572}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5d87b01946ee9bb4490459b989700768, type: 3}
       propertyPath: m_LocalScale.x
@@ -4145,7 +4334,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2106200610}
+    m_TransformParent: {fileID: 8763497709948254572}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9ede5d6b7ae989c4baf716edb9123372, type: 3}
       propertyPath: m_LocalScale.x
@@ -4599,150 +4788,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72998c3abf137b94cbf5ab2d4814080f, type: 3}
---- !u!1 &2106200609
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2106200610}
-  - component: {fileID: 2106200613}
-  - component: {fileID: 2106200612}
-  - component: {fileID: 2106200611}
-  - component: {fileID: 2106200615}
-  - component: {fileID: 2106200614}
-  m_Layer: 0
-  m_Name: Translator1
-  m_TagString: Translator
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2106200610
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106200609}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 52, y: 10, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 977835697}
-  - {fileID: 1405192090}
-  - {fileID: 1653758733}
-  m_Father: {fileID: 1349649643}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2106200611
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106200609}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &2106200612
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106200609}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &2106200613
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106200609}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2106200614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106200609}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abe648f861dd1fd4495ece5e2dfb9382, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &2106200615
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106200609}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!1 &2124244058
 GameObject:
   m_ObjectHideFlags: 0
@@ -4757,6 +4802,7 @@ GameObject:
   - component: {fileID: 2124244060}
   - component: {fileID: 2124244064}
   - component: {fileID: 2124244063}
+  - component: {fileID: 2124244065}
   m_Layer: 0
   m_Name: Translator4
   m_TagString: Translator
@@ -4887,6 +4933,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &2124244065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124244058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed19565227a6854f919ab5fb851077f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombies:
+  - {fileID: 6466056858245238364, guid: e19c5cd911291714597988b05eb1aad2, type: 3}
+  vehiculos:
+  - {fileID: 95459775442738897, guid: aa7fd84f076a2bf40979750f3d945680, type: 3}
+  - {fileID: 3912586820146283082, guid: 7b375b428fdb9c5468ed27b8a43da14a, type: 3}
+  - {fileID: 8524567528031041249, guid: d6084ba5ba515f04e906cc3900ffedd2, type: 3}
+  carriles:
+  - -3
+  - 0
+  - 3
+  alturaSpawn: 0.5
+  distanciaSegura: 40
+  probabilidadVacio: 0.4
+  probabilidadZombie: 0.6
 --- !u!1 &2133172112
 GameObject:
   m_ObjectHideFlags: 0
@@ -4901,6 +4973,7 @@ GameObject:
   - component: {fileID: 2133172114}
   - component: {fileID: 2133172118}
   - component: {fileID: 2133172117}
+  - component: {fileID: 2133172119}
   m_Layer: 0
   m_Name: Translator3
   m_TagString: Translator
@@ -5031,6 +5104,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: -0.5, z: 0}
+--- !u!114 &2133172119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2133172112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed19565227a6854f919ab5fb851077f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombies:
+  - {fileID: 6466056858245238364, guid: e19c5cd911291714597988b05eb1aad2, type: 3}
+  vehiculos:
+  - {fileID: 95459775442738897, guid: aa7fd84f076a2bf40979750f3d945680, type: 3}
+  - {fileID: 3912586820146283082, guid: 7b375b428fdb9c5468ed27b8a43da14a, type: 3}
+  - {fileID: 8524567528031041249, guid: d6084ba5ba515f04e906cc3900ffedd2, type: 3}
+  carriles:
+  - -3
+  - 0
+  - 3
+  alturaSpawn: 0.5
+  distanciaSegura: 40
+  probabilidadVacio: 0.4
+  probabilidadZombie: 0.6
 --- !u!4 &147055181557240789
 Transform:
   m_ObjectHideFlags: 0
@@ -5189,6 +5288,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &883932075229576482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8316694029342873244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe648f861dd1fd4495ece5e2dfb9382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1025436649288289173
 Transform:
   m_ObjectHideFlags: 0
@@ -5461,6 +5572,11 @@ Transform:
   - {fileID: 8982455813440868876}
   m_Father: {fileID: 2872542692588320119}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2665113722454864128 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9ede5d6b7ae989c4baf716edb9123372, type: 3}
+  m_PrefabInstance: {fileID: 1957754729}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2828942623567437982
 GameObject:
   m_ObjectHideFlags: 0
@@ -5760,6 +5876,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!33 &5118940177695176336
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8316694029342873244}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &5152889911065311269
 GameObject:
   m_ObjectHideFlags: 0
@@ -5839,6 +5963,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &5479958366466150261 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d328e0bbfd7c78f47b6dbc2daa2387de, type: 3}
+  m_PrefabInstance: {fileID: 1656266647}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5521175995709893689
 Transform:
   m_ObjectHideFlags: 0
@@ -5951,6 +6080,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &5986752308178392550
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8316694029342873244}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &5991486019635916245
 GameObject:
   m_ObjectHideFlags: 0
@@ -6099,6 +6250,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &6272538499183191574 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5d87b01946ee9bb4490459b989700768, type: 3}
+  m_PrefabInstance: {fileID: 1821473236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6542274711504267075
 GameObject:
   m_ObjectHideFlags: 0
@@ -6436,6 +6592,54 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8631587071688983314}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8244044436936767159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8316694029342873244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed19565227a6854f919ab5fb851077f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombies:
+  - {fileID: 6466056858245238364, guid: e19c5cd911291714597988b05eb1aad2, type: 3}
+  vehiculos:
+  - {fileID: 95459775442738897, guid: aa7fd84f076a2bf40979750f3d945680, type: 3}
+  - {fileID: 3912586820146283082, guid: 7b375b428fdb9c5468ed27b8a43da14a, type: 3}
+  - {fileID: 8524567528031041249, guid: d6084ba5ba515f04e906cc3900ffedd2, type: 3}
+  carriles:
+  - -3
+  - 0
+  - 3
+  alturaSpawn: 0.5
+  distanciaSegura: 40
+  probabilidadVacio: 0.4
+  probabilidadZombie: 0.6
+--- !u!1 &8316694029342873244
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8763497709948254572}
+  - component: {fileID: 5118940177695176336}
+  - component: {fileID: 8681562334713932075}
+  - component: {fileID: 5986752308178392550}
+  - component: {fileID: 8805385864228239605}
+  - component: {fileID: 883932075229576482}
+  - component: {fileID: 8244044436936767159}
+  m_Layer: 0
+  m_Name: Translator1
+  m_TagString: Translator
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &8480864307784322496
 Transform:
   m_ObjectHideFlags: 0
@@ -6501,6 +6705,66 @@ Transform:
   - {fileID: 8018293064512475456}
   m_Father: {fileID: 2300652367917910677}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &8681562334713932075
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8316694029342873244}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!4 &8763497709948254572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8316694029342873244}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 52, y: 10, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6272538499183191574}
+  - {fileID: 5479958366466150261}
+  - {fileID: 2665113722454864128}
+  m_Father: {fileID: 1349649643}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8772684433321696947
 GameObject:
   m_ObjectHideFlags: 0
@@ -6517,6 +6781,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &8805385864228239605
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8316694029342873244}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!4 &8982455813440868876
 Transform:
   m_ObjectHideFlags: 0

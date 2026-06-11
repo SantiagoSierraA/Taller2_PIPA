@@ -5,16 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [Header("Movimiento")]
-    public float velocidadAdelante = 8f; // velocidad de avance forzado (eje Z)
-    public float velocidadLateral = 6f; // velocidad al moverse con A/D (eje X)
-    public float limiteIzquierda = -4f;
-    public float limiteDerecha = 4f;
+    public float velocidadAdelante = 8f; // avance forzado (eje Z)
+    public float velocidadCambioCarril = 6f; 
+    public float[] carriles = { -3f, 0f, 3f };    
+    private int carrilActual = 1;
 
     [Header("Salto")]
-    public float fuerzaSalto = 8f;
+    public float fuerzaSalto = 5f;
     private bool enSuelo = true;
-
-    private float movX;  
     private Rigidbody rb;
 
     public Transform puntoDisparo;
@@ -30,8 +28,9 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // A = -1, D = 1
-        movX = Input.GetAxis("Horizontal");
+        // A = carril a la izquierda, D = carril a la derecha
+        if (Input.GetKeyDown(KeyCode.A) && carrilActual > 0) carrilActual--;
+        if (Input.GetKeyDown(KeyCode.D) && carrilActual < carriles.Length - 1) carrilActual++;
         saltar();
         Disparo();
     }
@@ -41,17 +40,12 @@ public class Player : MonoBehaviour
         moverPlayer();
     }
 
-    // Avance forzado en Z + movimiento lateral con A/D
+   // Avance forzado en Z + acercamiento suave al carril objetivo en X
     void moverPlayer()
     {
-        float vx = movX * velocidadLateral;
-
-        // si esta en un limite e intenta salir, no se mueve en X
-        if ((rb.position.x <= limiteIzquierda && vx < 0) ||
-            (rb.position.x >= limiteDerecha && vx > 0))
-            vx = 0f;
-
-        rb.velocity = new Vector3(vx, rb.velocity.y, velocidadAdelante);
+        float xObjetivo = carriles[carrilActual];
+        float velocidadX = (xObjetivo - rb.position.x) * velocidadCambioCarril;
+        rb.velocity = new Vector3(velocidadX, rb.velocity.y, velocidadAdelante);
     }
 
     // Salta hacia arriba si el jugador está tocando el suelo
@@ -69,6 +63,10 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Translator"))
             enSuelo = true;
+
+        // muerte: si choca con un enemigo u obstáculo, termina la partida
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Obstacle"))
+            GameManager.instancia.GameOver();
     }
 
     void OnCollisionExit(Collision collision)

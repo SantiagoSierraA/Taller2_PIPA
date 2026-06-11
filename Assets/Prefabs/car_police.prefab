@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4573316173509167838}
   - component: {fileID: 6303374134549263752}
   - component: {fileID: 8228820150870836790}
+  - component: {fileID: 7293026137970420928}
+  - component: {fileID: -4069344472691992959}
   m_Layer: 0
   m_Name: car_police
   m_TagString: Obstacle
@@ -87,6 +89,42 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &7293026137970420928
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95459775442738897}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2467928
+  m_Height: 1.1
+  m_Direction: 2
+  m_Center: {x: -0.0000049248483, y: 0.1607962, z: -0.003298463}
+--- !u!114 &-4069344472691992959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 95459775442738897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3d9d0956d5b1b46bae523391179c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sonidoMuerte: {fileID: 0}
 --- !u!1 &857077575272091410
 GameObject:
   m_ObjectHideFlags: 0

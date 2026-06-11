@@ -42,5 +42,10 @@ public class PlataformManager : MonoBehaviour
         plataforma.transform.position = new Vector3(plataforma.transform.position.x,
         plataforma.transform.position.y, nuevaZ);
         ultimaPlataformaZ += distanciaEntrePlataformas; 
+
+        // genera contenido nuevo (zombie/vehículo) en la plataforma ya reposicionada
+        GeneradorContenido generador = plataforma.GetComponent<GeneradorContenido>();
+        if (generador != null)
+            generador.Generar();
     }
 }

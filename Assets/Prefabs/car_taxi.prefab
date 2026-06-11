@@ -343,6 +343,8 @@ GameObject:
   - component: {fileID: 6739013437871739214}
   - component: {fileID: 5256834955706894795}
   - component: {fileID: 2520369953830860206}
+  - component: {fileID: 602856528582676780}
+  - component: {fileID: 3771092506196197432}
   m_Layer: 0
   m_Name: car_taxi
   m_TagString: Obstacle
@@ -419,3 +421,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &602856528582676780
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8524567528031041249}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2467928
+  m_Height: 1.1
+  m_Direction: 2
+  m_Center: {x: -0.000004924834, y: 0.17171443, z: -0.0032984614}
+--- !u!114 &3771092506196197432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8524567528031041249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3d9d0956d5b1b46bae523391179c65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sonidoMuerte: {fileID: 0}
