@@ -865,9 +865,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfbbde239dd9b143bc65ceb48f8a488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sonidoMuerte: {fileID: 0}
+  sonidoMuerte: {fileID: 8300000, guid: 55027e4aa005ced4abf30a55d0803b59, type: 3}
   velocidad: 3
   animator: {fileID: 0}
+  distanciaDeteccion: 1
+  alturaRayo: 0.5
 --- !u!95 &6900811772172111381
 Animator:
   serializedVersion: 5

@@ -9,12 +9,22 @@ public class GameManager : MonoBehaviour
     [Header("Referencias")]
     public Transform jugador;
 
-    [Header("UI")]
+    [Header("UI - HUD")]
     public TMP_Text textoPuntaje;
     public TMP_Text textoMonedas;
 
+    [Header("UI - Paneles")]
+    public GameObject panelInicio;
+    public GameObject panelGameOver;
+    public TMP_Text textoFinalPuntaje;
+    public TMP_Text textoFinalMonedas;
+
     private int monedas = 0;
-    private int puntaje = 0; 
+    private int puntaje = 0;
+    private bool juegoActivo = false;
+
+    public AudioSource musicaFondo;
+    public AudioSource musicaDerrota;
 
     void Awake()
     {
@@ -23,12 +33,18 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 0f; // juego pausado hasta presionar Play
+
+        if (panelInicio != null)   panelInicio.SetActive(true);
+        if (panelGameOver != null) panelGameOver.SetActive(false);
+
         actualizarUI();
     }
 
     void Update()
     {
+        if (!juegoActivo) return;
+
         if (jugador != null)
         {
             int nuevoPuntaje = Mathf.Max(0, Mathf.FloorToInt(jugador.position.z));
@@ -38,6 +54,15 @@ public class GameManager : MonoBehaviour
                 actualizarUI();
             }
         }
+    }
+
+    // Boton PLAY del panel de inicio
+    public void IniciarPartida()
+    {
+        juegoActivo = true;
+        Time.timeScale = 1f;
+
+        if (panelInicio != null) panelInicio.SetActive(false);
     }
 
     // Suma una moneda al contador y refresca la UI
@@ -57,12 +82,27 @@ public class GameManager : MonoBehaviour
     // Termina la partida cuando el jugador muere
     public void GameOver()
     {
-        ReiniciarPartida();
+        if (!juegoActivo) return;
+        juegoActivo = false;
+        Time.timeScale = 0f;
+
+        if (panelGameOver != null)
+        {
+            if (musicaFondo != null) musicaFondo.Stop();
+            if (musicaDerrota != null) musicaDerrota.Play();
+            panelGameOver.SetActive(true);
+
+            if (textoFinalPuntaje != null)
+                textoFinalPuntaje.text = "PUNTUACIÓN: " + puntaje.ToString("D8");
+            if (textoFinalMonedas != null)
+                textoFinalMonedas.text = "MONEDAS: " + monedas.ToString("D2");
+        }
     }
 
     // Vuelve a cargar la escena actual (reinicia la partida)
     public void ReiniciarPartida()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

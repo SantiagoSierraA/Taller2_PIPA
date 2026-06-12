@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     private float tiempoUltimoDisparo = 0f; 
     public float cooldownDisparo = 0.5f;
 
+    public AudioSource audioSource;
+    public AudioClip sonidoDisparo;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -79,6 +81,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && Time.time >= tiempoUltimoDisparo + cooldownDisparo)
         {
+            audioSource.PlayOneShot(sonidoDisparo);
             Instantiate(prefabBala, puntoDisparo.position, puntoDisparo.rotation);
             tiempoUltimoDisparo = Time.time;
         }

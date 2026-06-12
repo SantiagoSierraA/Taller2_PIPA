@@ -456,4 +456,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3d9d0956d5b1b46bae523391179c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sonidoMuerte: {fileID: 0}
+  sonidoMuerte: {fileID: 8300000, guid: 55027e4aa005ced4abf30a55d0803b59, type: 3}

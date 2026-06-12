@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675b12a67bea83347b1bf3f84b89eefb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sonidoRecoger: {fileID: 0}
+  sonidoRecoger: {fileID: 8300000, guid: 58f3031b56779974a915904066474d30, type: 3}
 --- !u!136 &5507270603071979512
 CapsuleCollider:
   m_ObjectHideFlags: 0
